@@ -1,0 +1,267 @@
+/* Melhorias de responsividade para o Dashboard Desafio PR */
+
+/* Regras gerais de responsividade */
+@media (max-width: 1200px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+    
+    .metrics-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .graphs-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .performance-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        padding: 12px 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 24px;
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    
+    .week-indicator {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .current-week-highlight {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .metrics-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-item {
+        width: 100%;
+    }
+    
+    .btn-limpar {
+        margin-top: 10px;
+    }
+    
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .dashboard-title {
+        margin-bottom: 10px;
+    }
+    
+    .table-container {
+        padding: 15px 10px;
+    }
+    
+    .table-title {
+        font-size: 18px;
+    }
+    
+    .card-title {
+        font-size: 14px;
+    }
+    
+    .card-value {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 10px;
+    }
+    
+    .dashboard-title {
+        font-size: 20px;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+    
+    .week-indicator {
+        font-size: 12px;
+        padding: 8px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+    
+    .current-week-highlight {
+        font-size: 14px;
+    }
+    
+    .metrics-container, 
+    .performance-container, 
+    .graphs-row {
+        gap: 15px;
+    }
+    
+    .card-title {
+        font-size: 13px;
+    }
+    
+    .card-value {
+        font-size: 22px;
+    }
+    
+    .table th, .table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .status-indicator {
+        font-size: 10px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .historico-data {
+        font-size: 14px;
+    }
+    
+    .historico-metricas {
+        font-size: 12px;
+    }
+    
+    .footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+}
+
+/* Ajustes específicos para elementos interativos em dispositivos móveis */
+@media (max-width: 768px) {
+    /* Melhorar a área de toque para botões */
+    .btn-limpar, .btn-reload {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+    
+    /* Ajustar tamanho dos dropdowns para facilitar seleção em telas touch */
+    .Select-control {
+        height: 40px;
+    }
+    
+    .Select-placeholder, 
+    .Select-input, 
+    .Select-value {
+        line-height: 38px !important;
+    }
+    
+    /* Aumentar área de toque para links na tabela */
+    .table td a {
+        padding: 5px 0;
+        display: inline-block;
+    }
+    
+    /* Ajustar área de upload para melhor experiência em dispositivos móveis */
+    #upload-data {
+        height: 150px;
+        line-height: 150px;
+    }
+}
+
+/* Ajustes para orientação landscape em dispositivos móveis */
+@media (max-width: 992px) and (orientation: landscape) {
+    .metrics-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .performance-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .graphs-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 360px) {
+    .dashboard-title {
+        font-size: 18px;
+    }
+    
+    .card-value {
+        font-size: 20px;
+    }
+    
+    .table-container {
+        margin-left: -10px;
+        margin-right: -10px;
+        width: calc(100% + 20px);
+        border-radius: 0;
+    }
+}
+
+/* Ajustes para visualização de gráficos em dispositivos móveis */
+@media (max-width: 768px) {
+    .js-plotly-plot .plotly .modebar {
+        transform: scale(0.8);
+        transform-origin: top right;
+    }
+    
+    /* Reduzir tamanho dos textos nos gráficos */
+    .js-plotly-plot .plotly .gtitle,
+    .js-plotly-plot .plotly .xtitle,
+    .js-plotly-plot .plotly .ytitle {
+        font-size: 12px !important;
+    }
+    
+    .js-plotly-plot .plotly .xtick text,
+    .js-plotly-plot .plotly .ytick text {
+        font-size: 10px !important;
+    }
+}
+
+/* Ajustes para melhorar a visualização de tabelas em dispositivos móveis */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Tabela com scroll horizontal em dispositivos móveis */
+    .table-container table {
+        min-width: 650px;
+    }
+    
+    /* Indicador visual de scroll horizontal */
+    .table-container:after {
+        content: "⟷ Deslize para ver mais";
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        padding: 5px 0;
+    }
+}

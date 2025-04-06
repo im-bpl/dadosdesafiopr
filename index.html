@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Desafio PR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            height: 80px;
+        }
+        .title {
+            font-size: 32px;
+            color: #0056b3;
+            margin: 0;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .card-title {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            background-color: #004494;
+            border-color: #004494;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #28a745;
+        }
+        .screenshot {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-container {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            .title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Logo Desafio PR" class="logo">
+                <h1 class="title">Dashboard Desafio PR</h1>
+            </div>
+            <a href="dashboard" class="btn btn-primary btn-lg">Acessar Dashboard</a>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Sobre o Dashboard</h2>
+            <p>O Dashboard Desafio PR é uma aplicação interativa para visualização e análise de dados dos NREs (Núcleos Regionais de Educação), escolas e professores do Paraná. Esta aplicação permite explorar os dados de forma hierárquica, filtrar informações específicas, atualizar os dados semanalmente e exportar informações para análises externas.</p>
+            
+            <p>Desenvolvido para facilitar o acompanhamento do desempenho educacional, o dashboard oferece uma interface intuitiva e responsiva, adaptada para uso em diferentes dispositivos.</p>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Principais Funcionalidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="feature-list">
+                        <li>Visualização de métricas gerais (NREs, escolas, alunos, professores)</li>
+                        <li>Gráficos interativos de desempenho</li>
+                        <li>Filtros por NRE, escola e professor</li>
+                        <li>Navegação hierárquica pelos dados</li>
+                        <li>Interface responsiva para dispositivos móveis</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="feature-list">
+                        <li>Exportação de dados em diferentes formatos (Excel, CSV)</li>
+                        <li>Exportação de gráficos como imagens (PNG)</li>
+                        <li>Exportação do dashboard completo como PDF</li>
+                        <li>Atualização de dados via upload de planilhas</li>
+                        <li>Histórico de atualizações com métricas comparativas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Como Utilizar</h2>
+            <p>Para acessar todas as funcionalidades do Dashboard Desafio PR, clique no botão "Acessar Dashboard" no topo da página. Você será redirecionado para a aplicação completa, onde poderá:</p>
+            
+            <ol>
+                <li>Visualizar os indicadores gerais de desempenho</li>
+                <li>Filtrar os dados por NRE e escola</li>
+                <li>Explorar os gráficos interativos</li>
+                <li>Exportar dados e visualizações</li>
+                <li>Atualizar os dados através do upload de planilhas</li>
+            </ol>
+            
+            <p>Para mais informações sobre como utilizar o dashboard, consulte o <a href="manual_usuario.pdf">Manual do Usuário</a>.</p>
+        </div>
+
+        <div class="footer">
+            <p>Dashboard Desafio PR © 2025 - Todos os direitos reservados</p>
+            <p>Versão 2.0 - Atualizado em Abril/2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Redirecionar para o dashboard quando o botão for clicado
+        document.querySelector('.btn-primary').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = '/dashboard';
+        });
+    </script>
+</body>
+</html>

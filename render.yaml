@@ -1,0 +1,17 @@
+# Configuração do Render para o Dashboard Desafio PR
+
+services:
+  # Serviço web para o dashboard
+  - type: web
+    name: dashboard-desafio-pr
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:server --workers 2 --threads 2 --timeout 60
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: PORT
+        value: 8080
+    healthCheckPath: /
